@@ -5,30 +5,36 @@ import './index.css'
 import {v4 as uuidv4} from 'uuid'
 export default function App(){
  
-  let role2="manager";
-const [role,setRole]=useState('dev');
+  // let role2="manager";
+// const [role,setRole]=useState('');
  const [employees,setEmployees]=useState(
   [
-    {name:"henok",role:"developer",img:"https://images.pexels.com/photos/2169434/pexels-photo-2169434.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"},
-    {name:"henok",role:"developer",img:"https://images.pexels.com/photos/2169434/pexels-photo-2169434.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"},
-    {name:"henok",role:"developer",img:"https://images.pexels.com/photos/2169434/pexels-photo-2169434.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"},
-    {name:"henok",role:"developer",img:"https://images.pexels.com/photos/2169434/pexels-photo-2169434.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"},
-    {name:"henok",role:"developer",img:"https://images.pexels.com/photos/2169434/pexels-photo-2169434.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"},
-    {name:"henok",role:"developer",img:"https://images.pexels.com/photos/2169434/pexels-photo-2169434.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"},
-    {name:"henok",role:"developer",img:"https://images.pexels.com/photos/2169434/pexels-photo-2169434.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"},
-    {name:"henok",role:"developer",img:"https://images.pexels.com/photos/2169434/pexels-photo-2169434.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"},
+    {id:1 ,name:"henok",role:"developer",img:"https://images.pexels.com/photos/2169434/pexels-photo-2169434.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"},
+    {id:2 ,name:"henok",role:"developer",img:"https://images.pexels.com/photos/2169434/pexels-photo-2169434.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"},
+    {id:3,name:"henok",role:"developer",img:"https://images.pexels.com/photos/2169434/pexels-photo-2169434.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"},
+    {id:4,name:"henok",role:"developer",img:"https://images.pexels.com/photos/2169434/pexels-photo-2169434.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"},
+    {id:5,name:"henok",role:"developer",img:"https://images.pexels.com/photos/2169434/pexels-photo-2169434.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"},
+    {id:6,name:"henok",role:"developer",img:"https://images.pexels.com/photos/2169434/pexels-photo-2169434.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"},
+    {id:7,name:"henok",role:"developer",img:"https://images.pexels.com/photos/2169434/pexels-photo-2169434.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"},
+    {id:8,name:"henok",role:"develops",img:"https://images.pexels.com/photos/2169434/pexels-photo-2169434.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"},
   ]
  )
+ function updateEmployee(id ,newName,newRole){
+  const updatedEmployees=employees.map((employee)=>{
+if(id == employee.id){
+  return{...employee,name:newName,role:newRole}
+}
+return employee;
+  });
+  setEmployees(updatedEmployees)
+  console.log('updateEmployee inside of app.js')
+ }
   return(   
 
 
  <div>
-     <h1 className="text-4xl font-bold  underline">
-      Hello world!
-    </h1>
-  <input type='text' onChange={(e)=>{
-    console.log(e.target.value)
-    setRole(e.target.value)}}/>
+  
+
 
 <div className='flex flex-wrap justify-center'>
  
@@ -36,10 +42,14 @@ const [role,setRole]=useState('dev');
   console.log(employee);
   return(
   <Employee
-  key={uuidv4()}
+
+  key={employee.id}
+  id={employee.id}
    name={employee.name} 
    role={employee.role} 
-   img={employee.img}/>)
+   img={employee.img}
+   updateEmployee={updateEmployee}
+   />)
 
 })}
 

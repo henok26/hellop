@@ -4,7 +4,7 @@ import EditEmployee from "./EditEmployee";
 
 function Employee(props) {
   return (
-    <div className="px-8 pt-16 max-w-sm  bg-white rounded-xl shadow-lg space-y-2 sm:py-4 sm:flex sm:items-center sm:space-y-0 sm:space-x-6 m-2">
+    <div className="min-w-[350px] max-w-[350px] px-8 pt-16 max-w-sm  bg-white rounded-xl shadow-lg space-y-2 sm:py-4 sm:flex sm:items-center sm:space-y-0 sm:space-x-6 m-2">
     <img className="object-cover h-[100px] w-[100px] block mx-auto  rounded-full sm:mx-0 sm:shrink-0" src={props.img} alt="Woman's Face" />
     <div className="text-center space-y-2 sm:text-left">
       <div className="space-y-0.5">
@@ -15,7 +15,7 @@ function Employee(props) {
           {props.role}
         </p>
 
-        <EditEmployee/>
+        <EditEmployee name={props.name} role={props.role} updateEmployee={props.updateEmployee} id={props.id}/>
       </div>
      
     </div>
