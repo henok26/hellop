@@ -46,8 +46,8 @@ function newEmployee(name, role, img) {
 
 
 return (
-  <div className='app bg-gray-300 min-h-screen'>
-    <Header/>
+  <div className=''>
+   
     <div className='flex flex-wrap justify-center'>
     {employees.map((employee)=>{
 
