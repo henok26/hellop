@@ -22,7 +22,7 @@ function EditEmployee(props) {
         keyboard={false}
       >
         <Modal.Header closeButton>
-          <Modal.Title>Update Employees</Modal.Title>
+          <Modal.Title>updated Employees</Modal.Title>
         </Modal.Header>
         <Modal.Body>
         <form onSubmit={(e)=>{
@@ -34,7 +34,7 @@ console.log(props.id,name,role)
   <div className="md:flex md:items-center mb-6">
     <div className="md:w-1/3">
       <label className="block text-gray-500 font-bold md:text-right mb-1 md:mb-0 pr-4" for="name">
-        Full Names
+        Fuly Names
       </label>
     </div>
     <div className="md:w-2/3">
@@ -47,7 +47,7 @@ console.log(props.id,name,role)
   <div className="md:flex md:items-center mb-6">
     <div className="md:w-1/3">
       <label className="block text-gray-500 font-bold md:text-right mb-1 md:mb-0 pr-4" for="role">
-    Roles
+    Rolese
       </label>
     </div>
     <div className="md:w-2/3">
