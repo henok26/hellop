@@ -22,7 +22,7 @@ function EditEmployee(props) {
         keyboard={false}
       >
         <Modal.Header closeButton>
-          <Modal.Title>updated Employees</Modal.Title>
+          <Modal.Title>update Employees</Modal.Title>
         </Modal.Header>
         <Modal.Body>
         <form onSubmit={(e)=>{
